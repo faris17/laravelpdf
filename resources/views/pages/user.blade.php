@@ -5,26 +5,40 @@
 
     </head>
     <body>
-        <a href="{{ route('user.pdf') }}">
-        <button class='btn btn-primary'>Generate PDF</button>
-        </a>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($data as $row)
+        <div class="container mt-5">
+            <form action="{{ route('user.import')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" class="form-control">
+                <button class="btn btn-info" class="form-control"> Upload</button>
+            </form>
+            <a href="{{ route('user.pdf') }}">
+                <button class='btn btn-primary'>Generate PDF</button>
+            </a>
+            &nbsp;
+            <a href="{{ route('user.export')}}">
+                <button class='btn btn-success'>Excel</button>
+            </a>
+
+            <table class="table">
+                <thead>
                   <tr>
-                      <td>{{$row->id}}</td>
-                      <td>{{$row->name}}</td>
-                      <td>{{$row->email}}</td>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
                   </tr>
-              @endforeach
-            </tbody>
-          </table>
+                </thead>
+                <tbody>
+                  @foreach ($data as $row)
+                      <tr>
+                          <td>{{$row->id}}</td>
+                          <td>{{$row->name}}</td>
+                          <td>{{$row->email}}</td>
+                      </tr>
+                  @endforeach
+                </tbody>
+              </table>
+
+        </div>
+
     </body>
 </html>

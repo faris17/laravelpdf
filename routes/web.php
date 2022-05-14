@@ -20,3 +20,8 @@ Route::get('/', function () {
 
 Route::get('user', [UserController::class, 'index']);
 Route::get('generatepdf', [UserController::class, 'generatepdf'])->name('user.pdf');
+
+//upload atau import
+Route::post('user-import', [UserController::class, 'import'])->name('user.import');
+//export excel
+Route::get('user-export', [UserController::class, 'export'])->name('user.export');
