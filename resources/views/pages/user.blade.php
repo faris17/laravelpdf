@@ -31,7 +31,7 @@
                   @foreach ($data as $row)
                       <tr>
                           <td>{{$row->id}}</td>
-                          <td>{{$row->name}}</td>
+                          <td><a href="{{route('user.product', $row->id)}}" target="_blank">{{$row->name}}</a></td>
                           <td>{{$row->email}}</td>
                       </tr>
                   @endforeach

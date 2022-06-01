@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,11 @@ Route::get('generatepdf', [UserController::class, 'generatepdf'])->name('user.pd
 Route::post('user-import', [UserController::class, 'import'])->name('user.import');
 //export excel
 Route::get('user-export', [UserController::class, 'export'])->name('user.export');
+
+Route::get('formupload', [UploadController::class, 'index'])->name('formupload.user');
+Route::post('upload', [UploadController::class, 'upload'])->name('upload.user');
+
+Route::get('register', [UserController::class, 'register'])->name('user.register');
+Route::post('postregister', [UserController::class, 'store'])->name('user.store');
+
+Route::get('product/{id}', [UserController::class, 'getproduct'])->name('user.product');
