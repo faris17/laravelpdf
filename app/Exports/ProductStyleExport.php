@@ -37,10 +37,6 @@ class ProductStyleExport implements
         $sheet->getColumnDimension('B')->setWidth(40);
         $sheet->getColumnDimension('C')->setWidth(13);
         $sheet->getColumnDimension('D')->setWidth(13);
-        // $jumlah_row_tambahan = 0;
-        // $kode = 0;
-        $row_border_terakhir = 12;
-        // $no = 1;
 
         return [
             'A1:D2' => [

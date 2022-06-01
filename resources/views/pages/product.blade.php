@@ -1,6 +1,6 @@
 <table>
     <tr>
-        <td colspan="7" rowspan="2" align="center"> Product User</td>
+        <td colspan="4" rowspan="2" align="center"> Product User</td>
     </tr>
     <tr>
         <td></td>

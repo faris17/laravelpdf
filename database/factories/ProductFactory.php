@@ -19,7 +19,7 @@ class ProductFactory extends Factory
     {
         return [
             'nameproduct' => $this->faker->name(),
-            'description' => $this->faker->words(5),
+            'description' => $this->faker->sentence(5),
             'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
