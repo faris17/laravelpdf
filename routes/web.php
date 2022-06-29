@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,5 @@ Route::get('register', [UserController::class, 'register'])->name('user.register
 Route::post('postregister', [UserController::class, 'store'])->name('user.store');
 
 Route::get('product/{id}', [UserController::class, 'getproduct'])->name('user.product');
+
+Route::get('product',[ProductController::class, 'index'])->name('product.ajax');
